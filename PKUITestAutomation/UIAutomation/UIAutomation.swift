@@ -26,9 +26,70 @@ class UIAutomation: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testLogin() throws {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Type email id
+        XCTAssert(LoginPage.emailText.exists)
+        LoginPage.emailText.tap()
+        LoginPage.emailText.typeText("UserName")
+        
+        //Enter password
+        XCTAssert(LoginPage.passwordText.exists)
+        LoginPage.passwordText.tap()
+        LoginPage.passwordText.typeText("password")
+        
+        //Login Button
+        XCTAssert(LoginPage.loginButton.exists)
+        LoginPage.loginButton.tap()
+        
+        //Select photo
+        XCTAssert(PhotoPage.selectPhoto1.exists)
+        PhotoPage.selectPhoto1.tap()
+        PhotoPage.imageQuery.images["Photo, March 30, 2018, 12:14 PM"].tap()
+        
+        //Select 2nd Photo
+        XCTAssert(PhotoPage.selectPhoto2.exists)
+        PhotoPage.selectPhoto2.tap()
+        PhotoPage.imageQuery.images["Photo, August 08, 2012, 2:55 PM"].tap()
+        
+        //Select 3rd phot
+        XCTAssert(PhotoPage.selectPhoto3.exists)
+        PhotoPage.selectPhoto3.tap()
+        PhotoPage.imageQuery.images["Photo, October 09, 2009, 2:09 PM"].tap()
+        
+        //Type Name
+        XCTAssert(PhotoPage.nameText.exists)
+        PhotoPage.nameText.tap()
+        PhotoPage.nameText.typeText("UserName")
+        
+        //Type Profession
+        XCTAssert(PhotoPage.professionTextField.exists)
+        PhotoPage.professionTextField.tap()
+        PhotoPage.professionTextField.typeText("SDET")
+        
+        //Type age
+        XCTAssert(PhotoPage.age.exists)
+        PhotoPage.age.tap()
+        PhotoPage.age.typeText("29")
+        
+        //Type Bio
+        XCTAssert(PhotoPage.enterBioTextField.exists)
+        PhotoPage.enterBioTextField.tap()
+        PhotoPage.enterBioTextField.typeText("UI Automation")
+        
+        //Use of slider
+        XCTAssert(PhotoPage.minSlider.exists)
+        PhotoPage.minSlider.adjust(toNormalizedSliderPosition: 0.5)
+        XCTAssert(PhotoPage.maxSlider.exists)
+        PhotoPage.maxSlider.swipeLeft()
+        
+        //Save Button
+        PhotoPage.saveButton.tap()
+        XCTAssert(PhotoPage.successText.exists)
+        
     }
+
 
 }

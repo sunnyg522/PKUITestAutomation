@@ -22,10 +22,5 @@ class LoginViewModel {
         isFormValid.value = isValid
     }
     
-    func performLogin(completion: @escaping (Error?) -> ()) {
-        guard let email = email, let password = password else { return }
-        isLoggingIn.value = true
-        
-        }
     }
 

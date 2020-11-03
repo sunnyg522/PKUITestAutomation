@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LBTATools
+
 
 class AgeRangeCell: UITableViewCell {
     
@@ -55,8 +55,8 @@ class AgeRangeCell: UITableViewCell {
             ])
         sliderStackView.axis = .vertical
         sliderStackView.spacing = 16
-        addSubview(sliderStackView)
-        sliderStackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 25, left: 25, bottom: 26, right: 25))
+        contentView.addSubview(sliderStackView)
+        sliderStackView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: contentView.bottomAnchor, trailing: contentView.trailingAnchor, padding: .init(top: 25, left: 25, bottom: 26, right: 25))
         
     }
     

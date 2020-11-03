@@ -61,18 +61,12 @@ class LoginVC: UIViewController {
     }()
     
     @objc fileprivate func handleLogin() {
-        loginViewModel.performLogin { (err) in
-            
-            if let err = err {
-                print("Failed to log in:", err)
-                return
-            }
-            
-            print("Logged in successfully")
-            self.dismiss(animated: true, completion: {
-                
-            })
-        }
+        
+        let settingsVC = SettingsController()
+        
+        let navController = UINavigationController(rootViewController: settingsVC)
+        present(navController, animated: true)
+        
     }
     
     fileprivate let backToRegisterButton: UIButton = {
@@ -90,7 +84,6 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupGradientLayer()
         setupLayout()
         setupBindables()
@@ -106,9 +99,7 @@ class LoginVC: UIViewController {
             self.loginButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1) : .lightGray
             self.loginButton.setTitleColor(isFormValid ? .white : .gray, for: .normal)
         }
-        loginViewModel.isLoggingIn.bind { [unowned self] (isRegistering) in
-            
-        }
+        
     }
     
     let gradientLayer = CAGradientLayer()
@@ -133,9 +124,6 @@ class LoginVC: UIViewController {
         view.addSubview(verticalStackView)
         verticalStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
         verticalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        view.addSubview(backToRegisterButton)
-        backToRegisterButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LBTATools
+
 
 class SettingsCell: UITableViewCell {
     
@@ -27,13 +27,14 @@ class SettingsCell: UITableViewCell {
     
     let textField: UITextField = {
         let tf = SettingsTextField()
+        tf.isUserInteractionEnabled = true
         tf.placeholder = "Enter name"
         return tf
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(textField)
+        contentView.addSubview(textField)
         textField.fillSuperview()
     }
     

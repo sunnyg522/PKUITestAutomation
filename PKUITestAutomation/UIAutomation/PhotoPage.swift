@@ -9,26 +9,16 @@
 import XCTest
 
 class PhotoPage: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
+    static let selectPhoto1 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 0).staticTexts["Select Photo"]
+    static let selectPhoto2 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 1).staticTexts["Select Photo"]
+    static let selectPhoto3 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 2).staticTexts["Select Photo"]
+    static let nameText = XCUIApplication().tables/*@START_MENU_TOKEN@*/.textFields["Enter Name"]/*[[".cells.textFields[\"Enter Name\"]",".textFields[\"Enter Name\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    static let professionTextField = XCUIApplication().tables/*@START_MENU_TOKEN@*/.textFields["Enter Profession"]/*[[".cells.textFields[\"Enter Profession\"]",".textFields[\"Enter Profession\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    static let enterBioTextField = XCUIApplication().tables/*@START_MENU_TOKEN@*/.textFields["Enter Bio"]/*[[".cells.textFields[\"Enter Bio\"]",".textFields[\"Enter Bio\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    static let saveButton = XCUIApplication().navigationBars["Settings"].buttons["Save"]
+    static let successText = XCUIApplication().staticTexts["Success!!!"]
+    static let minSlider = XCUIApplication().tables/*@START_MENU_TOKEN@*/.sliders["MIN_SLIDER"]/*[[".cells.sliders[\"MIN_SLIDER\"]",".sliders[\"MIN_SLIDER\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    static let maxSlider = XCUIApplication().tables/*@START_MENU_TOKEN@*/.staticTexts["Max 99"]/*[[".cells.staticTexts[\"Max 99\"]",".staticTexts[\"Max 99\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    static let imageQuery = XCUIApplication().scrollViews.otherElements
+    static let age = XCUIApplication().tables/*@START_MENU_TOKEN@*/.textFields["Enter Age"]/*[[".cells.textFields[\"Enter Age\"]",".textFields[\"Enter Age\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
 }
