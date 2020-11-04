@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		257C41412551F413004163FF /* PKUITestAutomationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C41402551F413004163FF /* PKUITestAutomationUITests.swift */; };
-		257C414D2551F46E004163FF /* UIAutomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C414C2551F46E004163FF /* UIAutomation.swift */; };
-		257C41632551FE9A004163FF /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C41622551FE9A004163FF /* LoginPage.swift */; };
-		257C4167255201BD004163FF /* PhotoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C4166255201BD004163FF /* PhotoPage.swift */; };
+		257C418325522B04004163FF /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C418225522B04004163FF /* LoginPage.swift */; };
+		257C418925522B1D004163FF /* PhotoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C418825522B1D004163FF /* PhotoPage.swift */; };
+		257C418D25522B49004163FF /* E2ETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C418C25522B49004163FF /* E2ETest.swift */; };
 		A4A25BA224E31C4D00149311 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A25BA124E31C4D00149311 /* AppDelegate.swift */; };
 		A4A25BA424E31C4D00149311 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A25BA324E31C4D00149311 /* SceneDelegate.swift */; };
 		A4A25BA624E31C4D00149311 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A25BA524E31C4D00149311 /* LoginVC.swift */; };
@@ -40,9 +40,9 @@
 		257C413E2551F413004163FF /* PKUITestAutomationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKUITestAutomationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		257C41402551F413004163FF /* PKUITestAutomationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKUITestAutomationUITests.swift; sourceTree = "<group>"; };
 		257C41422551F413004163FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		257C414C2551F46E004163FF /* UIAutomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAutomation.swift; sourceTree = "<group>"; };
-		257C41622551FE9A004163FF /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
-		257C4166255201BD004163FF /* PhotoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPage.swift; sourceTree = "<group>"; };
+		257C418225522B04004163FF /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		257C418825522B1D004163FF /* PhotoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPage.swift; sourceTree = "<group>"; };
+		257C418C25522B49004163FF /* E2ETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2ETest.swift; sourceTree = "<group>"; };
 		A4A25B9E24E31C4D00149311 /* PKUITestAutomation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKUITestAutomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A25BA124E31C4D00149311 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4A25BA324E31C4D00149311 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,20 +81,21 @@
 		257C413F2551F413004163FF /* PKUITestAutomationUITests */ = {
 			isa = PBXGroup;
 			children = (
+				257C418125522ADA004163FF /* Automation */,
 				257C41402551F413004163FF /* PKUITestAutomationUITests.swift */,
 				257C41422551F413004163FF /* Info.plist */,
 			);
 			path = PKUITestAutomationUITests;
 			sourceTree = "<group>";
 		};
-		25D33CF02551F02B007EE482 /* UIAutomation */ = {
+		257C418125522ADA004163FF /* Automation */ = {
 			isa = PBXGroup;
 			children = (
-				257C414C2551F46E004163FF /* UIAutomation.swift */,
-				257C41622551FE9A004163FF /* LoginPage.swift */,
-				257C4166255201BD004163FF /* PhotoPage.swift */,
+				257C418225522B04004163FF /* LoginPage.swift */,
+				257C418825522B1D004163FF /* PhotoPage.swift */,
+				257C418C25522B49004163FF /* E2ETest.swift */,
 			);
-			path = UIAutomation;
+			path = Automation;
 			sourceTree = "<group>";
 		};
 		A4A25B9524E31C4D00149311 = {
@@ -118,7 +119,6 @@
 		A4A25BA024E31C4D00149311 /* PKUITestAutomation */ = {
 			isa = PBXGroup;
 			children = (
-				25D33CF02551F02B007EE482 /* UIAutomation */,
 				A4A25BC924E34CFA00149311 /* Confirmation */,
 				A4A25BC024E32AA500149311 /* UserSettings */,
 				A4A25BBE24E3214800149311 /* Binding */,
@@ -277,9 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				257C414D2551F46E004163FF /* UIAutomation.swift in Sources */,
-				257C4167255201BD004163FF /* PhotoPage.swift in Sources */,
-				257C41632551FE9A004163FF /* LoginPage.swift in Sources */,
+				257C418925522B1D004163FF /* PhotoPage.swift in Sources */,
+				257C418325522B04004163FF /* LoginPage.swift in Sources */,
+				257C418D25522B49004163FF /* E2ETest.swift in Sources */,
 				257C41412551F413004163FF /* PKUITestAutomationUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

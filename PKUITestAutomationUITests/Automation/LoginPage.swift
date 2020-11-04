@@ -9,6 +9,7 @@
 import XCTest
 
 class LoginPage: XCTestCase {
+
     static let emailText = XCUIApplication().textFields["Enter email"]
     static let passwordText = XCUIApplication().secureTextFields["Enter password"]
     static let loginButton = XCUIApplication().buttons["Login"]

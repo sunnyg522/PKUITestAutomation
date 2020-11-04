@@ -9,6 +9,7 @@
 import XCTest
 
 class PhotoPage: XCTestCase {
+
     static let selectPhoto1 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 0).staticTexts["Select Photo"]
     static let selectPhoto2 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 1).staticTexts["Select Photo"]
     static let selectPhoto3 = XCUIApplication().tables.children(matching: .button).matching(identifier: "Select Photo").element(boundBy: 2).staticTexts["Select Photo"]
@@ -21,4 +22,5 @@ class PhotoPage: XCTestCase {
     static let maxSlider = XCUIApplication().tables/*@START_MENU_TOKEN@*/.staticTexts["Max 99"]/*[[".cells.staticTexts[\"Max 99\"]",".staticTexts[\"Max 99\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
     static let imageQuery = XCUIApplication().scrollViews.otherElements
     static let age = XCUIApplication().tables/*@START_MENU_TOKEN@*/.textFields["Enter Age"]/*[[".cells.textFields[\"Enter Age\"]",".textFields[\"Enter Age\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+
 }

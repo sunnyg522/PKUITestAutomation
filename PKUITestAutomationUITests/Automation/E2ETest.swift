@@ -1,5 +1,5 @@
 //
-//  UIAutomation.swift
+//  E2ETest.swift
 //  PKUITestAutomationUITests
 //
 //  Created by Dinesh Gunda on 11/3/20.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class UIAutomation: XCTestCase {
+class E2ETest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,11 +26,7 @@ class UIAutomation: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testLogin() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        // Type email id
+    func testE2E() throws {
         XCTAssert(LoginPage.emailText.exists)
         LoginPage.emailText.tap()
         LoginPage.emailText.typeText("UserName")
@@ -91,8 +87,6 @@ class UIAutomation: XCTestCase {
         //Save Button
         PhotoPage.saveButton.tap()
         XCTAssert(PhotoPage.successText.exists)
-        
     }
-
 
 }
