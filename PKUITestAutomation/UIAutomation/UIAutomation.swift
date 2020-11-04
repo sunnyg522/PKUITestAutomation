@@ -47,17 +47,20 @@ class UIAutomation: XCTestCase {
         //Select photo
         XCTAssert(PhotoPage.selectPhoto1.exists)
         PhotoPage.selectPhoto1.tap()
-        PhotoPage.imageQuery.images["Photo, March 30, 2018, 12:14 PM"].tap()
+       // PhotoPage.imageQuery.images["Photo, March 30, 2018, 12:14 PM"].tap()
+        PhotoPage.imageQuery.images.element(boundBy: 0).tap()
         
         //Select 2nd Photo
         XCTAssert(PhotoPage.selectPhoto2.exists)
         PhotoPage.selectPhoto2.tap()
-        PhotoPage.imageQuery.images["Photo, August 08, 2012, 2:55 PM"].tap()
+//        PhotoPage.imageQuery.images["Photo, August 08, 2012, 2:55 PM"].tap()
+        PhotoPage.imageQuery.images.element(boundBy: 1).tap()
         
         //Select 3rd phot
         XCTAssert(PhotoPage.selectPhoto3.exists)
         PhotoPage.selectPhoto3.tap()
-        PhotoPage.imageQuery.images["Photo, October 09, 2009, 2:09 PM"].tap()
+//        PhotoPage.imageQuery.images["Photo, October 09, 2009, 2:09 PM"].tap()
+        PhotoPage.imageQuery.images.element(boundBy: 2).tap()
         
         //Type Name
         XCTAssert(PhotoPage.nameText.exists)
